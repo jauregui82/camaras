@@ -101,6 +101,88 @@ window.webcam = {
 		this.loaded = false;
 		return html;
 	},
+
+	get_html_1: function(width, height, server_width, server_height) {
+		// Return HTML for embedding webcam capture movie
+		// Specify pixel width and height (640x480, 320x240, etc.)
+		// Server width and height are optional, and default to movie width/height
+		if (!server_width) server_width = width;
+		if (!server_height) server_height = height;
+		
+		var html = '';
+		var flashvars = 'shutter_enabled=' + (this.shutter_sound ? 1 : 0) + 
+			'&shutter_url=' + escape(this.shutter_url) + 
+			'&width=' + width + 
+			'&height=' + height + 
+			'&server_width=' + server_width + 
+			'&server_height=' + server_height;
+		
+		if (this.ie) {
+			html += '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="'+this.protocol+'://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="'+width+'" height="'+height+'" id="webcam_movie_1" align="middle"><param name="allowScriptAccess" value="always" /><param name="allowFullScreen" value="false" /><param name="movie" value="'+this.swf_url+'" /><param name="loop" value="false" /><param name="menu" value="false" /><param name="quality" value="best" /><param name="bgcolor" value="#ffffff" /><param name="flashvars" value="'+flashvars+'"/></object>';
+		}
+		else {
+			html += '<embed id="webcam_movie_1" src="'+this.swf_url+'" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="'+width+'" height="'+height+'" name="webcam_movie_1" align="middle" allowScriptAccess="always" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="'+flashvars+'" />';
+		}
+		
+		this.loaded = false;
+		return html;
+	},
+
+
+	get_html_2: function(width, height, server_width, server_height) {
+		// Return HTML for embedding webcam capture movie
+		// Specify pixel width and height (640x480, 320x240, etc.)
+		// Server width and height are optional, and default to movie width/height
+		if (!server_width) server_width = width;
+		if (!server_height) server_height = height;
+		
+		var html = '';
+		var flashvars = 'shutter_enabled=' + (this.shutter_sound ? 1 : 0) + 
+			'&shutter_url=' + escape(this.shutter_url) + 
+			'&width=' + width + 
+			'&height=' + height + 
+			'&server_width=' + server_width + 
+			'&server_height=' + server_height;
+		
+		if (this.ie) {
+			html += '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="'+this.protocol+'://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="'+width+'" height="'+height+'" id="webcam_movie_2" align="middle"><param name="allowScriptAccess" value="always" /><param name="allowFullScreen" value="false" /><param name="movie" value="'+this.swf_url+'" /><param name="loop" value="false" /><param name="menu" value="false" /><param name="quality" value="best" /><param name="bgcolor" value="#ffffff" /><param name="flashvars" value="'+flashvars+'"/></object>';
+		}
+		else {
+			html += '<embed id="webcam_movie_2" src="'+this.swf_url+'" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="'+width+'" height="'+height+'" name="webcam_movie_2" align="middle" allowScriptAccess="always" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="'+flashvars+'" />';
+		}
+		
+		this.loaded = false;
+		return html;
+	},
+
+	get_html_3: function(width, height, server_width, server_height) {
+		// Return HTML for embedding webcam capture movie
+		// Specify pixel width and height (640x480, 320x240, etc.)
+		// Server width and height are optional, and default to movie width/height
+		if (!server_width) server_width = width;
+		if (!server_height) server_height = height;
+		
+		var html = '';
+		var flashvars = 'shutter_enabled=' + (this.shutter_sound ? 1 : 0) + 
+			'&shutter_url=' + escape(this.shutter_url) + 
+			'&width=' + width + 
+			'&height=' + height + 
+			'&server_width=' + server_width + 
+			'&server_height=' + server_height;
+		
+		if (this.ie) {
+			html += '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="'+this.protocol+'://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="'+width+'" height="'+height+'" id="webcam_movie_3" align="middle"><param name="allowScriptAccess" value="always" /><param name="allowFullScreen" value="false" /><param name="movie" value="'+this.swf_url+'" /><param name="loop" value="false" /><param name="menu" value="false" /><param name="quality" value="best" /><param name="bgcolor" value="#ffffff" /><param name="flashvars" value="'+flashvars+'"/></object>';
+		}
+		else {
+			html += '<embed id="webcam_movie_3" src="'+this.swf_url+'" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="'+width+'" height="'+height+'" name="webcam_movie_3" align="middle" allowScriptAccess="always" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="'+flashvars+'" />';
+		}
+		
+		this.loaded = false;
+		return html;
+	},
+
+
+	
 	
 	get_movie: function() {
 		// get reference to movie object/embed in DOM
@@ -110,6 +192,33 @@ window.webcam = {
 		return movie;
 	},
 	
+	get_movie_1: function() {
+		// get reference to movie object/embed in DOM
+		if (!this.loaded) return alert("ERROR: Movie is not loaded yet");
+		var movie = document.getElementById('webcam_movie_1');
+		if (!movie) alert("ERROR: Cannot locate movie 'webcam_movie_1' in DOM");
+		return movie;
+	},
+
+
+	get_movie_2: function() {
+		// get reference to movie object/embed in DOM
+		if (!this.loaded) return alert("ERROR: Movie is not loaded yet");
+		var movie = document.getElementById('webcam_movie_2');
+		if (!movie) alert("ERROR: Cannot locate movie 'webcam_movie_2' in DOM");
+		return movie;
+	},
+
+	get_movie_3: function() {
+		// get reference to movie object/embed in DOM
+		if (!this.loaded) return alert("ERROR: Movie is not loaded yet");
+		var movie = document.getElementById('webcam_movie_3');
+		if (!movie) alert("ERROR: Cannot locate movie 'webcam_movie_3' in DOM");
+		return movie;
+	},
+
+
+
 	set_stealth: function(stealth) {
 		// set or disable stealth mode
 		this.stealth = stealth;
@@ -130,6 +239,20 @@ window.webcam = {
 		// freeze webcam image (capture but do not upload)
 		this.get_movie()._snap('', this.quality, this.shutter_sound ? 1 : 0, 0 );
 	},
+
+	freeze_1: function() {
+		// freeze webcam image (capture but do not upload)
+		this.get_movie_1()._snap('', this.quality, this.shutter_sound ? 1 : 0, 0 );
+	},
+	freeze_2: function() {
+		// freeze webcam image (capture but do not upload)
+		this.get_movie_2()._snap('', this.quality, this.shutter_sound ? 1 : 0, 0 );
+	},
+	freeze_3: function() {
+		// freeze webcam image (capture but do not upload)
+		this.get_movie_3()._snap('', this.quality, this.shutter_sound ? 1 : 0, 0 );
+	},
+
 	
 	upload: function(url, callback) {
 		// upload image to server after taking snapshot
@@ -141,6 +264,40 @@ window.webcam = {
 		this.get_movie()._upload( this.api_url );
 	},
 	
+	upload_1: function(url, callback) {
+		// upload image to server after taking snapshot
+		// specify fully-qualified URL to server API script
+		// and callback function (string or function object)
+		if (callback) this.set_hook('onComplete', callback);
+		if (url) this.set_api_url(url);
+		
+		this.get_movie_1()._upload( this.api_url );
+	},
+
+	upload_2: function(url, callback) {
+		// upload image to server after taking snapshot
+		// specify fully-qualified URL to server API script
+		// and callback function (string or function object)
+		if (callback) this.set_hook('onComplete', callback);
+		if (url) this.set_api_url(url);
+		
+		this.get_movie_2()._upload( this.api_url );
+	},
+
+	upload_3: function(url, callback) {
+		// upload image to server after taking snapshot
+		// specify fully-qualified URL to server API script
+		// and callback function (string or function object)
+		if (callback) this.set_hook('onComplete', callback);
+		if (url) this.set_api_url(url);
+		
+		this.get_movie_3()._upload( this.api_url );
+	},
+
+
+
+
+
 	reset: function() {
 		// reset movie after taking snapshot
 		this.get_movie()._reset();
@@ -152,7 +309,28 @@ window.webcam = {
 		if (!panel) panel = "camera";
 		this.get_movie()._configure(panel);
 	},
+	configure_1: function(panel) {
+		// open flash configuration panel -- specify tab name:
+		// "camera", "privacy", "default", "localStorage", "microphone", "settingsManager"
+		if (!panel) panel = "camera";
+		this.get_movie_1()._configure(panel);
+	},
 	
+	configure_2: function(panel) {
+		// open flash configuration panel -- specify tab name:
+		// "camera", "privacy", "default", "localStorage", "microphone", "settingsManager"
+		if (!panel) panel = "camera";
+		this.get_movie_2()._configure(panel);
+	},
+	configure_3: function(panel) {
+		// open flash configuration panel -- specify tab name:
+		// "camera", "privacy", "default", "localStorage", "microphone", "settingsManager"
+		if (!panel) panel = "camera";
+		this.get_movie_3()._configure(panel);
+	},
+
+
+
 	set_quality: function(new_quality) {
 		// set the JPEG quality (1 - 100)
 		// default is 90

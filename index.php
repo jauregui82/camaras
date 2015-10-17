@@ -44,6 +44,25 @@
 			webcam.upload();
 		}
 		
+		function do_upload_1() {
+			// subir al servidor
+			document.getElementById('upload_results').innerHTML = '<h1>Cargando al servidor 1...</h1>';
+			webcam.upload_1();
+		}
+		function do_upload_2() {
+			// subir al servidor
+			document.getElementById('upload_results').innerHTML = '<h1>Cargando al servidor 2...</h1>';
+			webcam.upload_2();
+		}
+		function do_upload_3() {
+			// subir al servidor
+			document.getElementById('upload_results').innerHTML = '<h1>Cargando al servidor  3...</h1>';
+			webcam.upload_3();
+		}
+
+
+
+
 		function my_completion_handler(msg) {
 			
 			if (msg.match(/(http\:\/\/\S+)/)) {
@@ -86,16 +105,16 @@
     </td>  
      <td width="263" valign=top>
 	<script language="JavaScript">
-	document.write( webcam.get_html(320, 240) );//dimensiones de la camara
+	document.write( webcam.get_html_1(320, 240) );//dimensiones de la camara
 	</script>
     </td>
     <td width="100" valign=top>
 		<form>
-		<input type=button value="Configurar" onClick="webcam.configure()" class="botones_cam">
+		<input type=button value="Configurar" onClick="webcam.configure_1()" class="botones_cam">
 		&nbsp;&nbsp;
-		<input type=button value="Tomar foto" onClick="webcam.freeze()" class="botones_cam">
+		<input type=button value="Tomar foto" onClick="webcam.freeze_1()" class="botones_cam">
 		&nbsp;&nbsp;
-		<input type=button value="subir" onClick="do_upload()" class="botones_cam">
+		<input type=button value="subir" onClick="do_upload_1()" class="botones_cam">
 		&nbsp;&nbsp;
 		<input type=button value="Reset" onClick="webcam.reset()" class="botones_cam">
 	</form>
@@ -105,11 +124,11 @@
 	<tr>
 		<td width="100" valign=top>
 		<form>
-		<input type=button value="Configurar" onClick="webcam.configure()" class="botones_cam">
+		<input type=button value="Configurar" onClick="webcam.configure_2()" class="botones_cam">
 		&nbsp;&nbsp;
-		<input type=button value="Tomar foto" onClick="webcam.freeze()" class="botones_cam">
+		<input type=button value="Tomar foto" onClick="webcam.freeze_2()" class="botones_cam">
 		&nbsp;&nbsp;
-		<input type=button value="subir" onClick="do_upload()" class="botones_cam">
+		<input type=button value="subir" onClick="do_upload_2()" class="botones_cam">
 		&nbsp;&nbsp;
 		<input type=button value="Reset" onClick="webcam.reset()" class="botones_cam">
 	</form>
@@ -117,21 +136,21 @@
 	</td>
     <td width="263" valign=top>
 	<script language="JavaScript">
-	document.write( webcam.get_html(320, 240) );//dimensiones de la camara
+	document.write( webcam.get_html_2(320, 240) );//dimensiones de la camara
 	</script>
     </td>  
      <td width="263" valign=top>
 	<script language="JavaScript">
-	document.write( webcam.get_html(320, 240) );//dimensiones de la camara
+	document.write( webcam.get_html_3(320, 240) );//dimensiones de la camara
 	</script>
     </td>
     <td width="100" valign=top>
 		<form>
-		<input type=button value="Configurar" onClick="webcam.configure()" class="botones_cam">
+		<input type=button value="Configurar" onClick="webcam.configure_3()" class="botones_cam">
 		&nbsp;&nbsp;
-		<input type=button value="Tomar foto" onClick="webcam.freeze()" class="botones_cam">
+		<input type=button value="Tomar foto" onClick="webcam.freeze_3()" class="botones_cam">
 		&nbsp;&nbsp;
-		<input type=button value="subir" onClick="do_upload()" class="botones_cam">
+		<input type=button value="subir" onClick="do_upload_3()" class="botones_cam">
 		&nbsp;&nbsp;
 		<input type=button value="Reset" onClick="webcam.reset()" class="botones_cam">
 	</form>
